@@ -1,5 +1,5 @@
-import type { ZoneAction, ZoneDecision, ZoneRule } from "./zone-law";
-import { decideZone } from "./zone-law";
+import type { ZoneAction, ZoneDecision, ZoneRule } from "./zone-law.ts";
+import { decideZone } from "./zone-law.ts";
 
 export interface ActionEnvelope<TPayload = unknown> {
   id: string;

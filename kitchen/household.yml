@@ -1,3 +1,8 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# EXAMPLE TEMPLATE — not a real household. During onboarding, an agent copies
+# this to kitchen/household.local.yml (gitignored) and fills in your details.
+# Nothing here imposes a diet; food beliefs live in food-rules.yml.
+# ─────────────────────────────────────────────────────────────────────────────
 version: 1
 
 household:

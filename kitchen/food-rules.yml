@@ -1,3 +1,8 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# EXAMPLE TEMPLATE — ships empty on purpose. A fresh fork imposes NO diet. Add
+# your household's rules here (or let an agent add them during onboarding); real
+# config belongs in food-rules.local.yml (gitignored).
+# ─────────────────────────────────────────────────────────────────────────────
 version: 1
 
 # Treatment describes what the kitchen should do.

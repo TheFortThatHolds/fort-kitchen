@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Cloudflare / Wrangler
+.wrangler/
+.dev.vars
+
+# Private household config created during onboarding (never committed).
+# The public repo ships kitchen/*.yml as EXAMPLE templates; a fork's real
+# household config lives in *.local.yml and stays out of git.
+kitchen/*.local.yml
+config/*.local.*
+
+# OS / editor
+.DS_Store
+*.log
