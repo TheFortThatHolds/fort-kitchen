@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fort Kitchen Zone",
+  "type": "object",
+  "required": [
+    "zone",
+    "level",
+    "note"
+  ],
+  "properties": {
+    "zone": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "level": {
+      "enum": [
+        "full",
+        "partial",
+        "ask"
+      ]
+    },
+    "note": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

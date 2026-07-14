@@ -1,0 +1,15 @@
+version: 1
+
+household:
+  name: My Kitchen
+  default_servings: 2
+
+members:
+  - id: primary
+    name: Primary user
+    role: owner
+
+settings:
+  timezone: America/Phoenix
+  measurement_system: us
+  pantry_precision: approximate

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fort Kitchen Food Rule",
+  "type": "object",
+  "required": [
+    "id",
+    "subject",
+    "applies_to",
+    "treatment",
+    "category",
+    "source",
+    "change_zone"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "applies_to": {
+      "type": "object",
+      "properties": {
+        "members": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "members"
+      ],
+      "additionalProperties": false
+    },
+    "treatment": {
+      "enum": [
+        "exclude",
+        "warn",
+        "avoid",
+        "deprioritize",
+        "prefer",
+        "require"
+      ]
+    },
+    "category": {
+      "enum": [
+        "medical",
+        "allergy",
+        "religious",
+        "ethical",
+        "dietary-pattern",
+        "preference",
+        "effort",
+        "budget",
+        "equipment",
+        "custom"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "user",
+            "import",
+            "agent-observation",
+            "medical-document"
+          ]
+        },
+        "recorded_at": {
+          "type": "string"
+        },
+        "evidence": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "change_zone": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
