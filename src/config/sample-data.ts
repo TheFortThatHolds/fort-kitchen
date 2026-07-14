@@ -23,6 +23,37 @@ export async function seedSample(service: KitchenService): Promise<void> {
 
   const recipes = [
     {
+      // A real recipe, shared with permission — Jimmy's Applesauce & Steam Bread
+      // (vegan / gluten-free / oil-free). Kept here as a working starter recipe
+      // so a fresh fork opens with something genuinely cookable.
+      name: "Applesauce & Steam Bread",
+      category: "bread",
+      servings: 2,
+      ingredients: [
+        "1 cup King Arthur gluten-free bread flour",
+        "1 cup warm water",
+        "1 1/2 tsp active dry yeast",
+        "2 cups water",
+        "1/2 tbsp active dry yeast",
+        "2 cups applesauce",
+        "1 tsp salt",
+        "gluten-free bread flour, added by feel",
+        "a handful of ice cubes",
+      ],
+      steps: [
+        "Mix 1 cup gluten-free flour, the warm water, and the heaping teaspoon of yeast into a loose mud. Rest 1-2 hours until it breathes a soft sourness.",
+        "Stir in the 2 cups water, the second yeast, the applesauce, and the salt until dissolved.",
+        "Fold in more gluten-free bread flour slowly. Stop while it's still wet and nearly sticky — heavy hydration is what lets it survive the high heat.",
+        "Cover with clean wet towels and let it rise under the damp weight.",
+        "At least an hour before baking, put a pizza stone on a middle rack and a sacrificial metal pan on the bottom rack. Heat the oven to 500F and let the stone fully absorb the heat.",
+        "Turn the risen dough out, shape into 2 large loaves (or 4 small), slash the tops, and move onto the hot stone.",
+        "Toss the ice into the bottom pan and shut the door fast — the steam keeps the surface flexible so the loaves expand without tearing.",
+        "Bake without opening the door: 30 minutes for 2 large loaves (20 for small), until deeply colored and hollow-sounding on the bottom.",
+        "Cool completely before slicing so the crumb sets.",
+      ],
+      notes: ["Keep the dough wet, nearly sticky — do not over-flour it."],
+    },
+    {
       name: "Weeknight Chili",
       category: "dinner",
       ingredients: ["1 can black beans", "1 can kidney beans", "1 onion", "1 tbsp chili powder", "1 can diced tomatoes", "salt to taste"],
