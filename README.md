@@ -6,6 +6,26 @@ Fort Kitchen is not merely a recipe box or meal planner. It gives a person and t
 
 Fork the repository, hand it to your agent, answer the onboarding questions, and let the agent configure a kitchen system around your actual household.
 
+## Run it now
+
+No accounts, no cloud, no keys — it runs on Node alone (v22.6+):
+
+```bash
+npm start        # serves the app on http://localhost:8787 with sample data
+npm test         # deterministic domain + zone-law + agent-bridge tests
+npm run typecheck
+```
+
+Deploy your own instance to Cloudflare Workers (the reference deployment):
+
+```bash
+wrangler kv namespace create KITCHEN   # paste the id into wrangler.jsonc
+npm run deploy
+```
+
+The app is one Cloudflare Worker backed by your own KV namespace. It holds no
+credentials and has no hidden dependency on any external service.
+
 ## What it does
 
 - **Tonight:** chooses a meal from what the household permits and can realistically make.
@@ -75,9 +95,27 @@ Fort Kitchen grew from a private phone-first system inside Fort Memory Core. Tha
 
 The public repository extracts those capabilities into portable contracts while keeping the private household data private.
 
+## Zone Law — what the agent may do
+
+Fort Kitchen separates two questions that most apps blur together:
+
+- **What does the kitchen believe?** — food rules (`kitchen/food-rules.yml`): allergies, medical restrictions, ethical boundaries, dislikes, preferences.
+- **What may the agent do about it?** — the **Zone Law** (`kitchen/zones.yml`, `docs/ZONE_LAW.md`): a web of permission zones, each at one of three levels — **FULL** (act + record), **PARTIAL** (act + record + notify), **ASK** (get approval first). The default for anything unlisted is ASK. Agents may add or *tighten* zones; only the household may *loosen* one.
+
+So an agent can pick tonight's dinner and build a shopping list on its own (FULL), but it cannot remove your allergy rule or spend money without asking (ASK). See `AGENTS.md` for the contract every agent follows.
+
 ## Project status
 
-Architecture and public extraction are beginning here. The first implementation target is a complete local-first fork that works without paid services, followed by optional Cloudflare and agent/voice adapters.
+**Milestone 1 (forkable skeleton) is in place:** typed record store with a
+local-first memory adapter and a Cloudflare KV adapter; deterministic Tonight
+decision, pantry matching, and shopping-list derivation (ported from the
+reference kitchen, diet-agnostic); the Zone Law permission layer with a working
+agent bridge; a phone-first PWA (Tonight / Recipes / Pantry / Week / Add); and
+tests. Runs with no paid services.
+
+Next: SQLite adapter, weekly-plan persistence in the UI, recipe/pantry capture
+(import + photo), and optional model/voice adapters — all behind the same ports,
+so a fork can adopt them one at a time.
 
 ## License
 

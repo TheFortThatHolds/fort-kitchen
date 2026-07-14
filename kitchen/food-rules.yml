@@ -1,0 +1,43 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# EXAMPLE TEMPLATE — ships empty on purpose. A fresh fork imposes NO diet. Add
+# your household's rules here (or let an agent add them during onboarding); real
+# config belongs in food-rules.local.yml (gitignored).
+# ─────────────────────────────────────────────────────────────────────────────
+version: 1
+
+# Treatment describes what the kitchen should do.
+# Suggested values:
+#   exclude | warn | avoid | deprioritize | prefer | require
+#
+# Rule changes are governed by zones:
+#   allergies, medical rules, religious rules, and hard exclusions
+#     -> dietary-boundaries
+#   ordinary likes, dislikes, and preferences
+#     -> dietary-preferences
+
+rules: []
+
+# Example:
+#
+# rules:
+#   - id: gluten-primary
+#     subject: gluten
+#     applies_to:
+#       members: [primary]
+#     treatment: exclude
+#     category: medical
+#     source:
+#       type: user
+#       recorded_at: 2026-07-14
+#     change_zone: dietary-boundaries
+#
+#   - id: mushrooms-primary
+#     subject: mushrooms
+#     applies_to:
+#       members: [primary]
+#     treatment: avoid
+#     category: preference
+#     source:
+#       type: user
+#       recorded_at: 2026-07-14
+#     change_zone: dietary-preferences

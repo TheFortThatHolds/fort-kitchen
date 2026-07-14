@@ -1,0 +1,26 @@
+{
+  // Fort Kitchen — the public app, as a Cloudflare Worker.
+  //
+  // This is the same deployment shape the reference kitchen runs on. To make it
+  // YOUR kitchen:
+  //   1. Create a KV namespace:   wrangler kv namespace create KITCHEN
+  //   2. Paste the returned id into the "id" field below.
+  //   3. wrangler deploy
+  //
+  // No Fort credentials are required and none are present. A fork owns its own
+  // Cloudflare account, its own KV namespace, and every byte of household data.
+  "name": "fort-kitchen",
+  "main": "src/server/worker.ts",
+  "compatibility_date": "2026-06-01",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // The household record store. Replace "id" with your own namespace id.
+  "kv_namespaces": [
+    { "binding": "KITCHEN", "id": "REPLACE_WITH_YOUR_KV_NAMESPACE_ID" }
+  ],
+
+  "observability": { "enabled": true }
+
+  // Optional, for hosting several households in one namespace:
+  //   "vars": { "KITCHEN_NS": "my-household" }
+}
