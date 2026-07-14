@@ -46,6 +46,8 @@ export function renderApp(): string {
   .pantry-item .n { flex:1; } .pantry-item.gone .n { color:var(--dim); text-decoration:line-through; }
   .dot { width:10px; height:10px; border-radius:50%; background:var(--accent); flex:0 0 auto; }
   .dot.off { background:var(--line); }
+  .photo { width:calc(100% + 28px); margin:-14px -14px 12px; height:180px; object-fit:cover;
+    border-radius:14px 14px 0 0; display:block; background:var(--panel2); }
   .alt { color:var(--dim); font-size:14px; padding:4px 0; }
   .muted { color:var(--dim); font-size:14px; }
   nav { position:fixed; bottom:0; left:0; right:0; display:flex; background:var(--panel);
@@ -139,11 +141,12 @@ async function load(){
 function ruleBadge(r){
   return r.exception ? '<span class="badge ex">⚠️ '+esc(r.exception)+'</span>' : '<span class="badge ok">✓ within rules</span>';
 }
+function photoImg(src){ return src ? '<img class="photo" alt="" src="'+esc(src)+'" />' : ''; }
 function renderRecipes(){
   var el = document.getElementById('recipes');
   if (!STATE.recipes.length) { el.innerHTML = '<p class="muted">No recipes yet. Add one on the ➕ tab.</p>'; return; }
   el.innerHTML = STATE.recipes.map(function(r){
-    return '<div class="card"><div class="cat">'+esc(r.category||'')+'</div><div class="name">'+esc(r.name||'')+ruleBadge(r)+'</div>'+
+    return '<div class="card">'+photoImg(r.photo)+'<div class="cat">'+esc(r.category||'')+'</div><div class="name">'+esc(r.name||'')+ruleBadge(r)+'</div>'+
       '<div class="muted" style="margin-top:6px">'+(Array.isArray(r.ingredients)?r.ingredients.length:0)+' ingredients</div>'+
       '<button class="ghost" style="margin-top:10px" onclick="delRecipe(\\''+r._id+'\\')">Delete</button></div>';
   }).join('');
@@ -181,7 +184,7 @@ async function decide(){
   else if (s.missing.length === 0) verdict = '<div class="verdict ok">✅ The pantry says yes — you can make this right now.</div>';
   else verdict = '<div class="verdict miss">🧂 Missing '+s.missing.length+' of '+s.required+': '+esc(s.missing.slice(0,6).join(' · '))+(s.missing.length>6?' …':'')+'</div>';
   var alts = (pick.alternates||[]).map(function(a){ return '<div class="alt"><b>'+esc(a.recipe.name)+'</b> — '+(a.missing.length===0?'✅ ready now':'missing '+a.missing.length)+'</div>'; }).join('');
-  el.innerHTML = '<div class="card"><div class="cat">'+esc(s.recipe.category||'')+'</div><div class="name">'+esc(s.recipe.name||'')+
+  el.innerHTML = '<div class="card">'+photoImg(s.recipe.photo)+'<div class="cat">'+esc(s.recipe.category||'')+'</div><div class="name">'+esc(s.recipe.name||'')+
     (s.exception?'<span class="badge ex">⚠️ '+esc(s.exception)+'</span>':'<span class="badge ok">✓</span>')+'</div>'+verdict+
     (alts?'<div style="margin-top:12px"><div class="cat">Close seconds</div>'+alts+'</div>':'')+'</div>';
 }

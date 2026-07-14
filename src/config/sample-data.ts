@@ -4,6 +4,7 @@
 // how the exception gate reads. Delete it and the kitchen imposes nothing.
 
 import type { KitchenService } from "../services/kitchen.ts";
+import { BREAD_PHOTO } from "./bread-photo.ts";
 
 export async function seedSample(service: KitchenService): Promise<void> {
   // One example boundary rule. Category/treatment show the shape; not a default.
@@ -52,6 +53,7 @@ export async function seedSample(service: KitchenService): Promise<void> {
         "Cool completely before slicing so the crumb sets.",
       ],
       notes: ["Keep the dough wet, nearly sticky — do not over-flour it."],
+      photo: BREAD_PHOTO,
     },
     {
       name: "Weeknight Chili",

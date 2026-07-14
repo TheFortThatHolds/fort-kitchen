@@ -35,6 +35,9 @@ export interface Recipe {
   substitutions?: Substitution[];
   notes?: string[];
   sourceUrl?: string;
+  // Optional image: a URL or a data: URI. Rendered on the recipe card and the
+  // Tonight pick. Data URIs keep a fork self-contained (no asset host).
+  photo?: string;
 }
 
 export interface Substitution {
