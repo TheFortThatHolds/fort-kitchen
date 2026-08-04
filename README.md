@@ -126,4 +126,5 @@ are at [thefortthatholds.xyz](https://thefortthatholds.xyz).
 
 ## License
 
-License decision pending. Choose one before accepting outside contributions or encouraging commercial redistribution.
+[MIT](LICENSE) © The Fort That Holds LLC. Fork it, rename it, run it for a household or a
+restaurant, sell the setup service — do what you like.
