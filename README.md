@@ -117,6 +117,14 @@ Next: SQLite adapter, weekly-plan persistence in the UI, recipe/pantry capture
 (import + photo), and optional model/voice adapters — all behind the same ports,
 so a fork can adopt them one at a time.
 
+## Where this came from
+
+Fort Kitchen is one organ of [The Fort That Holds](https://thefortthatholds.com) — a sovereign,
+agent-operated stack built by one person in the open. The other pieces that have been
+generalized and released the same way, plus the written routes for building them yourself,
+are at [thefortthatholds.xyz](https://thefortthatholds.xyz).
+
 ## License
 
-License decision pending. Choose one before accepting outside contributions or encouraging commercial redistribution.
+[MIT](LICENSE) © The Fort That Holds LLC. Fork it, rename it, run it for a household or a
+restaurant, sell the setup service — do what you like.
