@@ -15,6 +15,7 @@ members:
     role: owner
 
 settings:
+  # EXAMPLE timezone for the public template — replace during onboarding.
   timezone: America/Phoenix
   measurement_system: us
   pantry_precision: approximate
