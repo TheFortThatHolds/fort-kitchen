@@ -24,10 +24,10 @@ export async function seedSample(service: KitchenService): Promise<void> {
 
   const recipes = [
     {
-      // A real recipe, shared with permission — Jimmy's Applesauce & Steam Bread
-      // (vegan / gluten-free / oil-free). Kept here as a working starter recipe
-      // so a fresh fork opens with something genuinely cookable.
-      name: "Applesauce & Steam Bread",
+      // Example starter recipe — generic applesauce steam bread (vegan /
+      // gluten-free / oil-free). Cookable sample so a fresh fork opens with
+      // something to try; replace it during onboarding. Not a household original.
+      name: "Starter Fort steam bread",
       category: "bread",
       servings: 2,
       ingredients: [
