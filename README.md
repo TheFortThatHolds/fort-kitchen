@@ -6,6 +6,8 @@ Fort Kitchen is not merely a recipe box or meal planner. It gives a person and t
 
 Fork the repository, hand it to your agent, answer the onboarding questions, and let the agent configure a kitchen system around your actual household.
 
+This repo is the free tool. There is no Fort Kitchen product to buy. Optional deeper Fort routes — the live seed rack and Braided Ink listings — are at the [Grand Bazaar](https://thefortthatholds.xyz).
+
 ## Run it now
 
 No accounts, no cloud, no keys — it runs on Node alone (v22.6+):
@@ -120,9 +122,24 @@ so a fork can adopt them one at a time.
 ## Where this came from
 
 Fort Kitchen is one organ of [The Fort That Holds](https://thefortthatholds.com) — a sovereign,
-agent-operated stack built by one person in the open. The other pieces that have been
-generalized and released the same way, plus the written routes for building them yourself,
-are at [thefortthatholds.xyz](https://thefortthatholds.xyz).
+agent-operated stack built by one person in the open.
+
+**This repository is the kitchen.** It is free, MIT, and complete enough to fork and run.
+There is no Fort Kitchen Selfware Seed and no kitchen Stripe checkout. If a kitchen seed
+is written later, it will be linked here. Until then, do not invent one.
+
+Optional deeper routes live at the [Grand Bazaar](https://thefortthatholds.xyz):
+
+- **Seed rack** — buy the route, not the program. Live today:
+  [LOCUS Symbiote](https://thefortthatholds.xyz/locus-products),
+  [Sovereign Web](https://thefortthatholds.xyz/sovereign-products),
+  [Digital Asset Vault](https://thefortthatholds.xyz/business-solutions),
+  [Beta Reader](https://thefortthatholds.xyz/digital-products).
+- **Braided Ink** — the [Beta Reader Pass](https://thefortthatholds.xyz/braided-ink-beta-pass)
+  ($50 / 14 days · $75 / 30 days) and the other live Braided Ink listings on that same shelf.
+
+The other generalized organs, plus those written routes, are there. This kitchen does not
+depend on any of them.
 
 ## License
 
